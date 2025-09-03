@@ -1,0 +1,192 @@
+/* Reset and Base Styles */
+:root {
+  --bg-color: #121212;
+  --primary-text-color: #E0E0E0;
+  --secondary-text-color: #BDBDBD;
+  --accent-color: #03DAC6;
+  --surface-color: #1E1E1E;
+  --border-radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--primary-text-color);
+  line-height: 1.6;
+}
+
+/* App Container */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Static image container (in index.html) */
+#static-image-container {
+    padding-bottom: 0;
+}
+
+.image-wrapper {
+    text-align: center;
+}
+
+/* React-rendered container */
+#root .container {
+    padding-top: 0;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  /* Remove top padding, spacing is now handled by the static image's margin */
+  padding: 0 0 2rem;
+  border-bottom: 1px solid var(--surface-color);
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-color);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.header h1 span {
+  color: var(--accent-color);
+}
+
+.header p {
+  font-size: 1.25rem;
+  color: var(--secondary-text-color);
+}
+
+/* Sections */
+.section {
+  margin-bottom: 3rem;
+}
+
+.section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+}
+
+.about-me p {
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+}
+
+/* Skills */
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill-item {
+  background-color: var(--surface-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: transform 0.2s ease-in-out;
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.project-card-content {
+  padding: 1.5rem;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: var(--secondary-text-color);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 4rem;
+  border-top: 1px solid var(--surface-color);
+  color: var(--secondary-text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+  .header h1 {
+    font-size: 2.5rem;
+  }
+  .header p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+  .header h1 {
+    font-size: 2rem;
+  }
+  .section h2 {
+      font-size: 1.75rem;
+  }
+}
